@@ -8,7 +8,6 @@ export class MessageService {
     const topicName = 'hello_topic';
     const result = JSON.stringify(data);
     async function publishMessage() {
-      // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
       const dataBuffer = Buffer.from(result);
       const customAttributes = {
         test: 'this is test!',
@@ -16,16 +15,20 @@ export class MessageService {
       };
       console.log(data);
       try {
+        // pubSubClient 를 통해 메시지 발신
         const messageId = await pubSubClient
           .topic(topicName)
           .publish(dataBuffer, customAttributes);
         console.log(`Message ${messageId} published.`);
+        return {
+          messageId: messageId,
+        };
       } catch (error) {
         console.error(`Received error while publishing: ${error.message}`);
         process.exitCode = 1;
       }
     }
 
-    await publishMessage();
+    return await publishMessage();
   }
 }

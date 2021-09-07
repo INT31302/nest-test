@@ -9,6 +9,6 @@ export class MessageController {
   @Post()
   @UseFilters(new AllExceptionsFilter())
   async sendMessage(@Body() data: Request) {
-    await this.messageService.sendMessage(data);
+    return await this.messageService.sendMessage(data);
   }
 }
