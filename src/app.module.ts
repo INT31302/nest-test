@@ -8,9 +8,10 @@ import {
   HttpExceptionFilter,
 } from './filters/exception.filter';
 import { APP_FILTER } from '@nestjs/core';
+import { HeroModule } from './hero/hero.module';
 
 @Module({
-  imports: [ConfigurationModule, MessageModule],
+  imports: [ConfigurationModule, MessageModule, HeroModule],
   controllers: [AppController],
   providers: [
     AppService,

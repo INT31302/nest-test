@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hero;
+
+service HeroService {
+  rpc FindOne (HeroRequest) returns (HeroResponse);
+  rpc FindMany (stream HeroRequest) returns (stream HeroResponse);
+}
+
+// Hero 조회 Request
+message HeroRequest {
+  int32 id = 1;
+}
+
+// Hero 조회 Response
+message HeroResponse {
+  int32 id = 1;
+  string name = 2;
+}

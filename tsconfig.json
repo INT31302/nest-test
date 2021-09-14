@@ -12,12 +12,9 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@pubsub/": [
-        "libs/pubsub/src"
-      ],
-      "@pubsub/*": [
-        "libs/pubsub/src/*"
-      ]
+      "@pubsub/": ["libs/pubsub/src"],
+      "@pubsub/*": ["libs/pubsub/src/*"]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }

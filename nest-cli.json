@@ -13,6 +13,7 @@
     }
   },
   "compilerOptions": {
+    "assets": ["**/*.proto"],
     "webpack": true
   }
 }
